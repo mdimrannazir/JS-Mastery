@@ -32,3 +32,33 @@ console.log("heroes: ",typeof(heroes))
 console.log("myObject: ",typeof(myObject))
 console.log("myFunction: ",typeof(myFunction))
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// ++++++++++++++++++++++++++
+
+// Stack <Primitive>, Heap <Non-Primitive>
+
+// Stack Example
+let myName = "Imran"
+let anotherName = myName
+anotherName = "Shan"
+
+console.log(myName); 
+console.log(anotherName); 
+
+// The value of myName isn't changed because stack keeps copy of variables
+
+// Heap Example
+let userOne = {
+    email:"abc@gmail.com",
+    pass: 123
+}
+
+let userTwo = userOne
+
+userTwo.email = "xyz@gmail.com"
+
+console.log(userOne);
+console.log(userTwo);
+
+// We see both userOne and userTwo got changed, bcz heap creates reference. So, both changed.
