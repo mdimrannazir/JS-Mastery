@@ -4,7 +4,7 @@
 const score = 100
 const scoreValue = 100.33
 // const score = "result"
-// JS is dynamic bcz we don't need define their datatype
+// JS is dynamic bcz we don't need define their datatypes
 const isLoggedIn = false
 const outsideTemp = null
 let userEmail;
@@ -31,3 +31,4 @@ const myFunction = function(){
 console.log("heroes: ",typeof(heroes))
 console.log("myObject: ",typeof(myObject))
 console.log("myFunction: ",typeof(myFunction))
+// https://262.ecma-international.org/5.1/#sec-11.4.3
