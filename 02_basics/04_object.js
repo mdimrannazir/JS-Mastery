@@ -64,18 +64,79 @@ const user = [
     }
 ]
 
-console.log(user[0].id);
-console.log(user[0].email);
+// console.log(user[0].id);
+// console.log(user[0].email);
 
 // Object keys or values print & note it's data type will be array
 
-console.log(ytUser);
-console.log(Object.keys(ytUser));
-console.log(Object.values(ytUser));
-console.log(Object.entries(ytUser)); //less used
+// console.log(ytUser);
+// console.log(Object.keys(ytUser));
+// console.log(Object.values(ytUser));
+// console.log(Object.entries(ytUser)); //less used
 
 // To reduce error, we first check if the key is available or not
 
-console.log(ytUser.hasOwnProperty('isLoggedIn'));
-console.log(ytUser.hasOwnProperty('isLogged'));
+// console.log(ytUser.hasOwnProperty('isLoggedIn'));
+// console.log(ytUser.hasOwnProperty('isLogged'));
 
+
+// +++++Object de-structure++++++
+
+const course = {
+    courseName: "JS Mastery",
+    price: "999",
+    courseInstructor: "Imran"
+}
+
+console.log(course.courseName);
+
+// Other way to print 
+
+const {courseName} = course //now I don't need to write course.courseName, I can only write courseName to print
+console.log(courseName);
+
+const {courseName: cName} = course //created alias of courseName to cName, I can only write cName to print
+console.log(cName);
+
+// Below code won't work, everytime without writing: props.__,props.__; we write {___} it's destructing used in react.
+
+// const navBar = (props.company) => {
+
+// }
+
+// navBar(company = "imran")
+
+// // Destructering
+
+// const navBar = ({company}) => {
+
+// }
+
+// navBar(company = "imran")
+
+
+// +++++Basic Json+++++++
+
+// Need to learn api fetch
+
+// This is how json api looks like
+// {
+//     "name": "Imran",
+//     "courseName": "JS Mastery",
+//     "price": "free"
+// }
+
+// Sometimes api in array format
+// [
+//     {},
+//     {},
+//     {}
+// ]
+
+// Example
+
+// https://randomuser.me/
+
+// https://jsonformatter.org/
+
+// Beautify in tree format
