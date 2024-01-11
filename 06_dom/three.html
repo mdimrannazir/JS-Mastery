@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Mastery</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+</body>
+<script>
+    const div = document.createElement('h1')
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute('title', 'generated title')
+    div.style.backgroundColor= 'green'
+    div.style.padding = "12px"
+    // div.innerText = "JS Mastery"
+    const addText = document.createTextNode("JS Mastery")
+    div.appendChild(addText)
+    document.body.appendChild(div)
+</script>
+</html>
