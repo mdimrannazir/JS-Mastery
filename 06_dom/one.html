@@ -26,4 +26,16 @@
         </ul>
     </div>
 </body>
+<script>
+    // Notes : https://en.wikipedia.org/wiki/Brendan_Eich
+    // DOM
+    console.log(document);
+    console.log(document.baseURI); //returns webpage url
+    console.log(document.links); //returns all links in a html collection form, remember it's not a an array so we can't use map or foreach here
+    console.log(document.links[2]); //returns 2nd url, remember 'links' is like an array.
+    document.getElementById('firstHeading')
+
+    // DOM Manipulation
+    document.getElementById('firstHeading').innerHTML = 'Imran JS Mastery'
+</script>
 </html>
