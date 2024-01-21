@@ -9,16 +9,17 @@
     <button id="stop">Stop</button>
 </body>
 <script>
+
+
     const myName = function () {
         console.log('Imran', Date.now());
     }
-
- 
-    const intervalID = setInterval(myName, 2000)
     
-    // document.getElementById('start').addEventListener('click', intervalID)
+    let intervalID;
 
-
+    document.getElementById('start').addEventListener('click', function(){
+        intervalID = setInterval(myName, 2000)
+    })
 
     document.getElementById('stop').addEventListener('click',function(){
         clearInterval(intervalID);
