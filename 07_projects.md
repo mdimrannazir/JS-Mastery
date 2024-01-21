@@ -193,7 +193,35 @@ form.addEventListener('submit', (e) => {
 
 ```
 
-## project 5: Automatic Background Color Changer
+## project 5: Keyboard Key Press Check
+
+```javascript
+window.addEventListener('keydown', function (e) {
+  document.getElementById('insert').innerHTML = `
+  <div class='color'>
+    <table>
+      <tr>
+        <td>Key</td>
+        <td>KeyCode</td>
+        <td>Code</td>
+      </tr>
+      <tr>
+        <td>${e.key}</td>
+        <td>${e.keyCode}</td>
+        <td>${e.code}</td>
+      </tr>
+    </table>
+  </div>
+  `;
+});
+
+
+
+```
+
+
+
+## project 6: Automatic Background Color Changer
 
 ```javascript
 const start = document.getElementById('start');
