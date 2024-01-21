@@ -193,3 +193,44 @@ form.addEventListener('submit', (e) => {
 
 ```
 
+## project 5: Automatic Background Color Changer
+
+```javascript
+const start = document.getElementById('start');
+const stop = document.getElementById('stop');
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalID;
+
+const startChaningColor = function () {
+  document.body.style.backgroundColor = randomColor();
+  console.log(randomColor());
+};
+
+const stopChaningColor = function () {
+  clearInterval(intervalID);
+  intervalID = null; //for clean code purpose only
+};
+
+start.addEventListener('click', function () {
+  if (!intervalID) {
+    //for clean code purpose only
+    intervalID = setInterval(startChaningColor, 1000);
+  }
+});
+
+stop.addEventListener('click', stopChaningColor);
+
+
+
+
+
+```
