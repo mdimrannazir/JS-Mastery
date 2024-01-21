@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h1>Set Interval | Clear Interval</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const myName = function () {
+        console.log('Imran', Date.now());
+    }
+
+ 
+    const intervalID = setInterval(myName, 2000)
+    
+    // document.getElementById('start').addEventListener('click', intervalID)
+
+
+
+    document.getElementById('stop').addEventListener('click',function(){
+        clearInterval(intervalID);
+        console.log("Stop");
+    })
+</script>
+</html
