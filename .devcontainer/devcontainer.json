@@ -20,6 +20,7 @@
 			"extensions": [
 				"esbenp.prettier-vscode",
 				"vscode-icons-team.vscode-icons",
+				"ritwickdey.LiveServer",
 				"wayou.vscode-todo-highlight"
 			],
 			"settings": {
