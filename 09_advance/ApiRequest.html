@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>API Request</title>
+</head>
+<body>
+
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/mdimrannazir'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4) {
+            // const data = this.responseText;
+            // console.log(data.followers); //undefined bcz it's string
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.followers);
+            console.log(data.avatar_url);
+            console.log(data);
+
+            const div = document.createElement('div');
+            div.innerHTML = `<div>
+                <h3>GitHub Api Request</h3>
+                <img src="${data.avatar_url}" width="200px">
+                <p>Name: ${data.name}</p>
+                <p>Followers: ${data.followers}</p>
+                <p>Following: ${data.following}</p>
+                <p>Location: ${data.location}</p>
+                <p>Bio: ${data.bio}</p>
+            <div>`
+            div.style.backgroundColor = '#212121'
+            div.style.color = 'white'
+            div.style.padding = "20px"
+            div.style.borderRadius = "20px"
+            div.style.width = '200px'
+            div.style.margin = 'auto'
+            document.body.appendChild(div)
+        }
+    }
+    xhr.send();
+</script>
+</html>
