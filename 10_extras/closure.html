@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // document.getElementById('orange')
+    // .onclick = function(){
+    //     document.body.style.backgroundColor = 'orange'
+    // }
+
+    function clickHandle(color){
+
+        return function(){ //this thing is important, uses the concept of lexical scope
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandle('orange')
+    document.getElementById('green').onclick = clickHandle('green')
+</script>
+</html>
