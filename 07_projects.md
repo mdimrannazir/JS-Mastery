@@ -255,8 +255,33 @@ start.addEventListener('click', function () {
   }
 });
 
-stop.addEventListener('click', stopChaningColor);
 
+## project 8: Automatic text change
+
+```javascript
+const typedTextSpan = document.querySelector('.typed-text');
+const cursor = document.querySelector('.cursor');
+
+const words = ['Love', 'Jhakaas', 'mast', 'dhinchak', 'Weird'];
+
+let j = 0;
+
+function type() {
+  if (j == words.length) {
+    erase();
+  }
+  typedTextSpan.innerHTML = words[j];
+  console.log(words[j]);
+  j++;
+  setTimeout(type, 1000);
+}
+
+function erase() {
+  typedTextSpan.innerHTML = '';
+  j = 0;
+}
+
+type();
 
 
 
