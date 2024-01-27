@@ -287,3 +287,54 @@ type();
 
 
 ```
+
+## project 9: Follow cursor and change color
+
+```javascript
+const cursor = document.querySelector('.cursor');
+// an array of 10 colors in hex value
+const colors = [
+  '#FF6633',
+  '#FFB399',
+  '#FF33FF',
+  '#FFFF99',
+  '#00B3E6',
+  '#E6B333',
+  '#3366E6',
+  '#999966',
+  '#99FF99',
+  '#B34D4D',
+];
+// add circle to cursor and change it's color as cursor moves on the screen. Pick color from these array
+
+document.addEventListener('mousemove', function (e) {
+  var y = e.clientX;
+  var x = e.clientY;
+  console.log(x);
+  console.log(y);
+  cursor.style.top = x;
+  cursor.style.left = y;
+  cursor.style.backgroundColor = changeColor();
+});
+
+// let currentColorIndex = 0;
+let i = 0;
+
+const changeColor = function () {
+  // const color = colors[currentColorIndex];
+  // currentColorIndex = (currentColorIndex + 1) % colors.length;
+  // return color;
+
+  if (i === colors.length - 1) {
+    i = 0;
+  } else {
+    i++;
+  }
+  return colors[i];
+};
+
+
+
+
+
+```
