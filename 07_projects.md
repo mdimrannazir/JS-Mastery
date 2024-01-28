@@ -255,6 +255,16 @@ start.addEventListener('click', function () {
   }
 });
 
+```
+
+
+
+## project 7: 
+
+```javascript
+
+
+```
 
 
 ## project 8: Automatic text change
