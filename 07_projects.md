@@ -256,17 +256,6 @@ start.addEventListener('click', function () {
 });
 
 
-## project 7: 
-
-```javascript
-
-
-
-
-
-
-```
-
 
 ## project 8: Automatic text change
 
@@ -351,10 +340,57 @@ const changeColor = function () {
 
 ```
 
-## project 10: 
+## project 10: Emoji change on mouse hover
 
 ```javascript
 
+const btn = document.querySelector('#emoji');
+const emojis = [
+  '😆',
+  '😅',
+  '🤣',
+  '😂',
+  '😀',
+  '🤑',
+  '🤨',
+  '🙂',
+  '😊',
+  '😗',
+  '😛',
+  '😏',
+  '🤥',
+  '😴',
+  '🥺',
+  '😧',
+  '😇',
+  '😳',
+  '🙃',
+  '🥴',
+  '🧐',
+  '🤨',
+  '😒',
+  '🤔',
+  '🤭',
+  '🥰',
+  '🤐',
+  '👀',
+  '🤔',
+  '🤪',
+  '😃',
+  '😁',
+  '😬',
+];
+
+let i = 0;
+btn.addEventListener('mouseover', function (e) {
+  if (i < 33) {
+    btn.innerHTML = emojis[i];
+    i++;
+    console.log(i);
+  } else {
+    i = 0;
+  }
+});
 
 
 
