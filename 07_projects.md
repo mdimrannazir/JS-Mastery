@@ -408,9 +408,99 @@ btn.addEventListener('mouseover', function (e) {
 
 ```
 
-## project 11: 
+## project 11: Typer library
 
 ```javascript
+const inputField = document.querySelector('#input-field');
+const outputField = document.querySelector('#output-field');
+const buttons = document.querySelectorAll('.btn');
+
+// ++++++ For Repetative approach++++++++
+// const Uppercase = document.querySelector('.uppercase');
+// const Lowercase = document.querySelector('.lowercase');
+// const Capitalize = document.querySelector('.capitalize');
+// const Bold = document.querySelector('.bold');
+// const Italic = document.querySelector('.italic');
+// const Underline = document.querySelector('.underline');
+
+buttons.forEach(function (myBtn) {
+  myBtn.addEventListener('click', function (e) {
+    let value = inputField.value;
+    if (e.target.className == 'btn uppercase') {
+      let x = value.toUpperCase();
+      outputField.innerHTML = x;
+    } else if (e.target.className == 'btn lowercase') {
+      let x = value.toLowerCase();
+      outputField.innerHTML = x;
+    } else if (e.target.className == 'btn capitalize') {
+      let totalValue = inputField.value;
+      let firstValue = inputField.value[0];
+      let lower = totalValue.toLowerCase();
+      lower = lower.slice(1);
+      let upper = firstValue.toUpperCase();
+      outputField.innerHTML = upper + lower;
+    } else if (e.target.className == 'btn bold') {
+      let x = value;
+      outputField.innerHTML = `<b>${x}</b>`;
+    } else if (e.target.className == 'btn bold') {
+      let x = value;
+      outputField.innerHTML = `<b>${x}</b>`;
+    } else if (e.target.className == 'btn italic') {
+      let x = value;
+      outputField.innerHTML = `<i>${x}</idsf>`;
+    } else if (e.target.className == 'btn underline') {
+      let x = value;
+      outputField.innerHTML = `<u>${x}</u>`;
+    }
+  });
+});
+
+// buttons.addEventListener('click', function (e) {
+//   let value = inputField.value;
+//   let x = value.toUpperCase();
+//   outputField.innerHTML = x;
+// });
+
+// ++++++Repetative approach++++++++
+
+// Uppercase.addEventListener('click', function (e) {
+//   let value = inputField.value;
+//   let x = value.toUpperCase();
+//   outputField.innerHTML = x;
+// });
+
+// Lowercase.addEventListener('click', function (e) {
+//   let value = inputField.value;
+//   let x = value.toLowerCase();
+//   outputField.innerHTML = x;
+// });
+
+// Capitalize.addEventListener('click', function (e) {
+//   let totalValue = inputField.value;
+//   let firstValue = inputField.value[0];
+//   let lower = totalValue.toLowerCase();
+//   lower = lower.slice(1);
+//   let upper = firstValue.toUpperCase();
+//   outputField.innerHTML = upper + lower;
+// });
+
+// Bold.addEventListener('click', function (e) {
+//   let value = inputField.value;
+//   let x = value;
+//   outputField.innerHTML = `<b>${x}</b>`;
+// });
+
+// Italic.addEventListener('click', function (e) {
+//   let value = inputField.value;
+//   let x = value;
+//   outputField.innerHTML = `<i>${x}</i>`;
+// });
+
+// Underline.addEventListener('click', function (e) {
+//   let value = inputField.value;
+//   let x = value;
+//   outputField.innerHTML = `<u>${x}</u>`;
+// });
 
 
 
