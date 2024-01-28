@@ -256,6 +256,18 @@ start.addEventListener('click', function () {
 });
 
 
+## project 7: 
+
+```javascript
+
+
+
+
+
+
+```
+
+
 ## project 8: Automatic text change
 
 ```javascript
@@ -332,6 +344,89 @@ const changeColor = function () {
   }
   return colors[i];
 };
+
+
+
+
+
+```
+
+## project 10: 
+
+```javascript
+
+
+
+
+
+
+```
+
+## project 11: 
+
+```javascript
+
+
+
+
+
+
+```
+
+
+## project 12: 
+
+```javascript
+
+
+
+
+
+
+```
+
+
+## project 13: 
+
+```javascript
+
+
+
+
+
+
+```
+
+
+## project 14: 
+
+```javascript
+
+
+
+
+
+
+```
+
+
+## project 15: 
+
+```javascript
+
+
+
+
+
+
+```
+
+
+
+## project 16: 
+
+```javascript
+
 
 
 
