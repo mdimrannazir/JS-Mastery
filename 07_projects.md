@@ -510,9 +510,28 @@ buttons.forEach(function (myBtn) {
 ```
 
 
-## project 12: 
+## project 12: Random Image
 
 ```javascript
+const baseURL = 'https://source.unsplash.com/all/300x300/';
+
+// this url gives an image. Use this and NO API calls
+
+const imgField = document.querySelector('.content');
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  // imgField.innerHTML = `<img src="${baseURL}">`;
+  if (imgField.firstChild) {
+    imgField.removeChild(imgField.firstChild);
+  }
+  let imgElemnent = document.createElement('img');
+  // https://source.unsplash.com/all/300x300/?random=&2
+  let randomBaseURL = baseURL + `?random=&${Math.random()}`;
+  imgElemnent.setAttribute('src', randomBaseURL);
+  imgField.appendChild(imgElemnent);
+});
 
 
 
