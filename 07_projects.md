@@ -541,9 +541,30 @@ btn.addEventListener('click', function () {
 ```
 
 
-## project 13: 
+## project 13: Jokes from API Request
 
 ```javascript
+const url = 'https://api.chucknorris.io/jokes/random';
+
+const jokeText = document.querySelector('#display-joke');
+const getJokeBtn = document.querySelector('.btn');
+
+getJokeBtn.addEventListener('click', function () {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      const data = JSON.parse(this.responseText);
+      console.log(data);
+      console.log(typeof data);
+      console.log(data.value);
+
+      jokeText.innerHTML = data.value;
+    }
+  };
+  xhr.send();
+});
 
 
 
