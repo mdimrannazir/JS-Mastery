@@ -574,9 +574,34 @@ getJokeBtn.addEventListener('click', function () {
 ```
 
 
-## project 14: 
+## project 14: random cats using api
 
 ```javascript
+const url = 'https://api.thecatapi.com/v1/images/search';
+
+const button = document.querySelector('.btn');
+const container = document.querySelector('.container');
+
+function getCat() {
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const url = data[0].url;
+      console.log(url);
+      container.className = 'cats';
+      const imgElement = document.createElement('img');
+      imgElement.src = url;
+      imgElement.style.padding = '10px';
+      imgElement.style.height = '500px';
+      container.appendChild(imgElement);
+    });
+}
+
+button.addEventListener('click', function () {
+  getCat();
+});
 
 
 
