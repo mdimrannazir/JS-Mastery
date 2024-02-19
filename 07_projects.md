@@ -611,9 +611,36 @@ button.addEventListener('click', function () {
 ```
 
 
-## project 15: 
+## project 15: Simple Book List App
 
 ```javascript
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const year = document.getElementById('year');
+const bookList = document.getElementById('book-list');
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', function (e) {
+  //work on CRUD operation of DOM
+  e.preventDefault();
+  console.log(title.value);
+  const section = document.createElement('section');
+  section.setAttribute('class', 'table-section');
+  section.innerHTML = `
+  <div>${title.value}</div>
+  <div>${author.value}</div>
+  <div>${year.value}</div>
+  <div><button class="dltBtn">X</button></div>
+  `;
+  bookList.appendChild(section);
+
+  section.addEventListener('click', function (e) {
+    console.log(e.target.className);
+    if (e.target.className == 'dltBtn') {
+      section.remove();
+    }
+  });
+});
 
 
 
