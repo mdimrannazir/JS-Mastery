@@ -611,7 +611,7 @@ button.addEventListener('click', function () {
 ```
 
 
-## project 15: Simple Book List App
+## project 15: Simple Book List App CRUD Operation
 
 ```javascript
 const title = document.getElementById('title');
@@ -619,6 +619,9 @@ const author = document.getElementById('author');
 const year = document.getElementById('year');
 const bookList = document.getElementById('book-list');
 const btn = document.querySelector('.btn');
+const btnUpdate = document.querySelector('.btnUpdate');
+
+let parentSection;
 
 btn.addEventListener('click', function (e) {
   //work on CRUD operation of DOM
@@ -626,21 +629,79 @@ btn.addEventListener('click', function (e) {
   console.log(title.value);
   const section = document.createElement('section');
   section.setAttribute('class', 'table-section');
-  section.innerHTML = `
-  <div>${title.value}</div>
-  <div>${author.value}</div>
-  <div>${year.value}</div>
-  <div><button class="dltBtn">X</button></div>
+  const titleDiv = document.createElement('div');
+  const authorDiv = document.createElement('div');
+  const yearDiv = document.createElement('div');
+  const actionDiv = document.createElement('div');
+
+  titleDiv.textContent = title.value;
+  authorDiv.textContent = author.value;
+  yearDiv.textContent = year.value;
+  actionDiv.innerHTML = `
+  <button class="editBtn">✏️</button> <button class="dltBtn">❌</button>
   `;
+  // section.innerHTML = `
+  // <div>${title.value}</div>
+  // <div>${author.value}</div>
+  // <div>${year.value}</div>
+  // <div></div>
+  // `;
+  section.appendChild(titleDiv);
+  section.appendChild(authorDiv);
+  section.appendChild(yearDiv);
+  section.appendChild(actionDiv);
+
   bookList.appendChild(section);
+
+  // Making input fields empty after the book is added
+  title.value = '';
+  author.value = '';
+  year.value = '';
+
+  // Delete & Edit
 
   section.addEventListener('click', function (e) {
     console.log(e.target.className);
     if (e.target.className == 'dltBtn') {
       section.remove();
+    } else if (e.target.className == 'editBtn') {
+      parentSection = e.target.parentElement.parentElement;
+
+      btnUpdate.style.display = 'block';
+      btnUpdate.style.float = 'right';
+
+      console.log(parentSection);
+
+      const parentSectionTitle = parentSection.querySelector('div:first-child');
+      const parentSectionAuthor =
+        parentSection.querySelector('div:nth-child(2)');
+      const parentSectionYear = parentSection.querySelector('div:nth-child(3)');
+
+      console.log(parentSectionTitle.textContent);
+      console.log(parentSectionAuthor.textContent);
+      console.log(parentSectionYear.textContent);
+
+      title.value = parentSectionTitle.textContent;
+      author.value = parentSectionAuthor.textContent;
+      year.value = parentSectionYear.textContent;
     }
   });
 });
+
+btnUpdate.addEventListener('click', function (e) {
+  e.preventDefault();
+  const parentSectionTitle = parentSection.querySelector('div:first-child');
+  const parentSectionAuthor = parentSection.querySelector('div:nth-child(2)');
+  const parentSectionYear = parentSection.querySelector('div:nth-child(3)');
+
+  console.log('update btn clicked');
+  parentSectionTitle.textContent = title.value;
+  parentSectionAuthor.textContent = author.value;
+  parentSectionYear.textContent = year.value;
+
+  btnUpdate.style.display = 'none';
+});
+
 
 
 
