@@ -624,8 +624,16 @@ const btnUpdate = document.querySelector('.btnUpdate');
 let parentSection;
 
 btn.addEventListener('click', function (e) {
-  //work on CRUD operation of DOM
   e.preventDefault();
+  if (title.value == '' || author.value == '' || year.value == '') {
+    alert('Fill the missing fields');
+  } else {
+    addBook();
+  }
+});
+
+function addBook() {
+  //work on CRUD operation of DOM
   console.log(title.value);
   const section = document.createElement('section');
   section.setAttribute('class', 'table-section');
@@ -640,12 +648,6 @@ btn.addEventListener('click', function (e) {
   actionDiv.innerHTML = `
   <button class="editBtn">✏️</button> <button class="dltBtn">❌</button>
   `;
-  // section.innerHTML = `
-  // <div>${title.value}</div>
-  // <div>${author.value}</div>
-  // <div>${year.value}</div>
-  // <div></div>
-  // `;
   section.appendChild(titleDiv);
   section.appendChild(authorDiv);
   section.appendChild(yearDiv);
@@ -665,10 +667,12 @@ btn.addEventListener('click', function (e) {
     if (e.target.className == 'dltBtn') {
       section.remove();
     } else if (e.target.className == 'editBtn') {
+      btn.style.display = 'none';
+
       parentSection = e.target.parentElement.parentElement;
 
       btnUpdate.style.display = 'block';
-      btnUpdate.style.float = 'right';
+      // btnUpdate.style.float = 'right';
 
       console.log(parentSection);
 
@@ -686,9 +690,13 @@ btn.addEventListener('click', function (e) {
       year.value = parentSectionYear.textContent;
     }
   });
-});
+}
+
+// Update Button Functinalities
 
 btnUpdate.addEventListener('click', function (e) {
+  btn.style.display = 'block';
+
   e.preventDefault();
   const parentSectionTitle = parentSection.querySelector('div:first-child');
   const parentSectionAuthor = parentSection.querySelector('div:nth-child(2)');
@@ -700,6 +708,12 @@ btnUpdate.addEventListener('click', function (e) {
   parentSectionYear.textContent = year.value;
 
   btnUpdate.style.display = 'none';
+
+  // Making input fields empty after the book is updated
+
+  title.value = '';
+  author.value = '';
+  year.value = '';
 });
 
 
